@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{authblk}
+
+\title{Does the Inertia of a Body Depend Upon Its Energy Content?}
+\author{Albert Einstein}
+\date{Received 27 September 1905\\Published 21 November 1905, \emph{Annalen der Physik}, 18, 639–641}
+
+\begin{document}
+\maketitle
+
+\section*{Introduction}
+Building on earlier work using the Maxwell--Hertz equations (for empty space), Maxwell's expression for electromagnetic energy, and the principle of relativity, we deduce the following result:
+
+A plane light‐wave system in frame $(x,y,z)$ has energy $\ell$, and propagates at angle~$\varphi$ to the $x$‐axis. In a frame $(\xi,\eta,\zeta)$ moving at velocity $v$ along $x$, this energy transforms to:
+\[
+\ell^* = \frac{\ell\,(1 - \tfrac{v}{c}\cos\varphi)}{\sqrt{1 - v^2/c^2}}.
+\]
+
+\section*{Energy Emission and Conservation}
+Consider a stationary body in $(x,y,z)$ with energy $E_0$. In the moving frame $(\xi,\eta,\zeta)$ it has energy $H_0$. Suppose this body emits two equal plane light pulses of total energy $\ell$ in opposite directions making angles $\varphi$ and $\pi + \varphi$ relative to the $x$‐axis.
+
+By conservation of energy in both frames:
+\begin{align*}
+E_0 &= E_1 + \tfrac12\ell + \tfrac12\ell = E_1 + \ell,\\
+H_0 &= H_1 + \frac{\ell}{\sqrt{1 - v^2/c^2}}.
+\end{align*}
+
+Subtracting yields:
+\[
+(H_0 - E_0) - (H_1 - E_1) = \ell\left( \frac{1}{\sqrt{1 - v^2/c^2}} - 1 \right).
+\]
+
+\section*{Connection to Kinetic Energy}
+Since $H$ and $E$ are energies of the same body in two inertial frames (one being at rest relative to the body), their difference can only differ by the kinetic energy $K$ in the moving frame up to a constant:
+\[
+H_0 - E_0 = K_0 + C,\qquad H_1 - E_1 = K_1 + C.
+\]
+Subtracting these eliminates $C$:
+\[
+K_0 - K_1 = \ell\left( \frac{1}{\sqrt{1 - v^2/c^2}} - 1 \right).
+\]
+
+\section*{Low-Velocity Approximation}
+For small $v$, expand to second order:
+\[
+\frac{1}{\sqrt{1 - v^2/c^2}} - 1 \approx \frac12\frac{v^2}{c^2}.
+\]
+Hence,
+\[
+K_0 - K_1 \approx \frac12\frac{\ell}{c^2}\,v^2.
+\]
+But also,
+\[
+K_0 - K_1 = \tfrac12(m_0 - m_1)\,v^2.
+\]
+Equating gives the fundamental result:
+\[
+m_0 - m_1 = \frac{\ell}{c^2} \quad\Longrightarrow\quad \Delta m = \frac{\ell}{c^2}.
+\]
+
+\section*{Conclusion}
+\begin{quote}
+The mass of a body is a measure of its energy content; if the energy changes by~$\ell$, its mass changes in the same direction by $$\Delta m = \frac{\ell}{c^2}.$$
+\end{quote}
+In modern notation, replacing $\ell$ with $E$ and $m$ with $m$, we obtain the celebrated equation:
+\[
+E = m\,c^2.
+\]
+
+This remarkable equivalence implies that mass can be converted into energy and vice versa. Measuring the change in mass and multiplying by $c^2$ yields the energy emitted, and vice versa. Even small mass differences correspond to enormous energies, especially evident in radioactive processes such as with radium salts.
+
+\end{document}
