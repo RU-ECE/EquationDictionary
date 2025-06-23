@@ -9,7 +9,13 @@ function createRow(name, equation) {
     const tr = document.createElement('tr');
     const tdName = document.createElement('td');
     const tdEquation = document.createElement('td');
-    tdName.textContent = name;
+    
+    // Create a link for the name that goes to the .md file
+    const link = document.createElement('a');
+    link.href = `${name}.md`;
+    link.textContent = name;
+    tdName.appendChild(link);
+    
     tdEquation.innerHTML = `$$${equation}$$`;
     tr.appendChild(tdName);
     tr.appendChild(tdEquation);
