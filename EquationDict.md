@@ -7,12 +7,12 @@ equations linked, then a secondary encyclopedia where all the equations are ampl
 
 [Search by name]()
 
-Equation List (this might be too big and unwieldy?)
-[Bolzmann Equation](bolzmann.md)
-[Navier-Stokes Equation](n-s.md)
+## Equation List (this might be too big and unwieldy?)
+- [Bolzmann Equation](bolzmann.md)
+- [Navier-Stokes Equation](n-s.md)
 
 Should we have categories? This is important in a system that is huge.
 What do we do when an equation crosses fields? Some wave equations are used in water dynamics and electrical engineering.
-[Numerical Derivative Methods]()
-[Numerical Integration Methods]()
-[Fluid Dynamics Equations]()
+* [Numerical Derivative Methods]()
+* [Numerical Integration Methods]()
+* [Fluid Dynamics Equations]()

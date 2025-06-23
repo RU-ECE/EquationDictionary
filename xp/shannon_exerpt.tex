@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+\begin{document}
+
+\section*{A Mathematical Theory of Communication}
+
+In the more general case with different lengths of symbols and constraints on the allowed sequences, we make the following definition:
+
+\medskip
+\noindent
+\textbf{Definition:} The capacity $C$ of a discrete channel is given by
+\[
+C = \lim_{T \to \infty} \frac{\log N(T)}{T}
+\]
+where $N(T)$ is the number of allowed signals of duration $T$.
+
+\medskip
+It is easily seen that in the teletype case this reduces to the previous result. It can be shown that the limit in question will exist as a finite number in most cases of interest.
+
+Suppose all sequences of the symbols $S_1, \ldots, S_n$ are allowed and these symbols have durations $t_1, \ldots, t_n$. What is the channel capacity? If $N(t)$ represents the number of sequences of duration $t$ we have:
+\[
+N(t) = N(t - t_1) + N(t - t_2) + \cdots + N(t - t_n)
+\]
+
+The total number is equal to the sum of the numbers of sequences ending in $S_1, S_2, \ldots, S_n$, and these are $N(t - t_1), N(t - t_2), \ldots, N(t - t_n)$ respectively.
+
+According to a well-known result in finite differences, $N(t)$ is then asymptotic for large $t$ to $X_0^t$ where $X_0$ is the largest real solution of the characteristic equation:
+\[
+x^{-t_1} + x^{-t_2} + \cdots + x^{-t_n} = 1
+\]
+and therefore
+\[
+C = \log X_0
+\]
+
+In case there are restrictions on allowed sequences we may still often obtain a difference equation of this type and find $C$ from the characteristic equation.
+
+In the telegraphy case mentioned above:
+\[
+N(t) = N(t - 2) + N(t - 4) + N(t - 5) + N(t - 7) + N(t - 8) + N(t - 10)
+\]
+
+as we see by counting sequences of symbols according to the last or next to the last symbol occurring. Hence $C = -\log p_0$ where $p_0$ is the positive root of
+\[
+1 = p^2 + p^4 + p^5 + p^7 + p^8 + p^{10}
+\]
+Solving this we find $C = 0.539$.
+
+\medskip
+A very general type of restriction which may be placed on allowed sequences is the following: We imagine a number of possible states $a_1, a_2, \ldots, a_m$. For each state only certain symbols from the set $S_1, \ldots, S_n$ can be transmitted (different subsets for the different states). When one of these has been transmitted the state changes to a new state depending both on the old state and the particular symbol transmitted. The telegraph case is a simple example of this. There are two states depending on whether or not a space was the last symbol transmitted.
+
+\end{document}
