@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equation Dictionary Display Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <h1>Equations</h1>
+    <table id="equations"></table>
+    
+    <script src="eq.js"></script>
+    <script>
+        // Load and parse .dat file
+        fetch('eqdict.dat')
+            .then(response => response.text())
+            .then(datText => {
+                const equations = parseDatFile(datText);
+                displayEquations(document.getElementById('equations'), equations);
+            });
+    </script>
+</body>
+</html>
