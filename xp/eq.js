@@ -4,6 +4,33 @@ window.MathJax = {
     tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
         displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    options: {
+        enableMenu: true,
+        menuOptions: {
+            settings: {
+                texHints: true,
+                semantics: false,
+                zoom: 'NoZoom',
+                zscale: '200%'
+            }
+        }
+    },
+    chtml: {
+        scale: 1,
+        minScale: .5,
+        matchFontHeight: true
+    },
+    sre: {
+        speech: 'shallow',
+        domain: 'mathspeak',
+        style: 'default'
+    },
+    a11y: {
+        speech: true,
+        braille: true,
+        magnifier: true,
+        explorer: true
     }
 };
 
