@@ -49,7 +49,7 @@ function createRow(name, equation) {
     link.textContent = name;
     tdName.appendChild(link);
     
-    tdEquation.innerHTML = `$$${equation}$$`;
+    tdEquation.innerHTML = `$${equation}$`;
     console.log('Equation HTML:', tdEquation.innerHTML);
     tr.appendChild(tdName);
     tr.appendChild(tdEquation);

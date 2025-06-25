@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
+    font-size: 32px;
 }
 
 table {
@@ -11,6 +12,14 @@ table {
 th, td {
     border: 1px solid #ddd;
     padding: 8px;
+    text-align: left;
+}
+
+td:first-child {
+    width: 200px;
+}
+
+td:last-child {
     text-align: left;
 }
 
@@ -25,4 +34,8 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+.MathJax_Display {
+    text-align: left !important;
 }
