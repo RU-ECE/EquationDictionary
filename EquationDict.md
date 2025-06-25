@@ -8,7 +8,7 @@ equations linked, then a secondary encyclopedia where all the equations are ampl
 [Search by name]()
 
 ## Equation List (this might be too big and unwieldy?)
-- [Bolzmann Equation](bolzmann.md)
+- [Bolzmann Equation](Bolzmann.md)
 - [Navier-Stokes Equation](n-s.md)
 
 Should we have categories? This is important in a system that is huge.
