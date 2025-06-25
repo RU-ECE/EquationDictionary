@@ -4,23 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equation Dictionary Display Page</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>∑</text></svg>">
     <link rel="stylesheet" href="style.css">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <h1>Equations</h1>
     <table id="equations"></table>
     
-    <script src="eq.js"></script>
     <script>
-        // Load and parse .dat file
-        fetch('eqdict.dat')
-            .then(response => response.text())
-            .then(datText => {
-                const equations = parseDatFile(datText);
-                displayEquations(document.getElementById('equations'), equations);
-            });
+        console.log('HTML script tag works');
     </script>
+    <script src="eq.js"></script>
 </body>
 </html>

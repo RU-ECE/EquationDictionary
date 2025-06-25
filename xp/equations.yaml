@@ -1,8 +1,0 @@
-- - Bolzmann
-  - \frac{\partial f}{\partial t} + \mathbf{v} \cdot \nabla f + \frac{\mathbf{F}}{m} \cdot \nabla_v f = \left(\frac{\partial f}{\partial t}\right)_\text{coll}
-- - Navier-Stokes
-  - \rho \left(\frac{\partial \mathbf{v}}{\partial t} + \mathbf{v} \cdot \nabla \mathbf{v}\right) = -\nabla p + \mu \nabla^2 \mathbf{v} + \mathbf{f}
-- - Mass-energy
-  - E=m c^2
-- - Newton-mass
-  - F=m a 

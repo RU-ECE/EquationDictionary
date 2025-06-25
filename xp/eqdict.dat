@@ -1,5 +1,151 @@
-Bolzmann:       \frac{\partial f}{\partial t} + \mathbf{v} \cdot \nabla f + \frac{\mathbf{F}}{m} \cdot \nabla_v f = \left(\frac{\partial f}{\partial t}\right)_\text{coll}
-Navier-Stokes:  \rho \left(\frac{\partial \mathbf{v}}{\partial t} + \mathbf{v} \cdot \nabla \mathbf{v}\right) = -\nabla p + \mu \nabla^2 \mathbf{v} + \mathbf{f}
-Mass-energy:    E = m c^2
-Newton-mass:    F = m a
+# Fundamental Identities
+Euler-Identity:       e^{i\pi} + 1 = 0
+Euler-Formula:        e^{ix} = \cos x + i\sin x
+De-Moivre:            (\cos x + i\sin x)^n = \cos(nx) + i\sin(nx)
+Pythagorean-Identity: \sin^2 x + \cos^2 x = 1
+Double-Angle-Sin:     \sin(2x) = 2\sin x\cos x
+Double-Angle-Cos:     \cos(2x) = \cos^2 x - \sin^2 x
+Half-Angle-Sin:       \sin^2(x/2) = \frac{1-\cos x}{2}
+Half-Angle-Cos:       \cos^2(x/2) = \frac{1+\cos x}{2}
+Sum-Sin:              \sin(A+B) = \sin A\cos B + \cos A\sin B
+Sum-Cos:              \cos(A+B) = \cos A\cos B - \sin A\sin B
+Difference-Sin:       \sin(A-B) = \sin A\cos B - \cos A\sin B
+Difference-Cos:       \cos(A-B) = \cos A\cos B + \sin A\sin B
+Product-Sin:          \sin A\sin B = \frac{1}{2}[\cos(A-B) - \cos(A+B)]
+Product-Cos:          \cos A\cos B = \frac{1}{2}[\cos(A-B) + \cos(A+B)]
+Product-Sin-Cos:      \sin A\cos B = \frac{1}{2}[\sin(A+B) + \sin(A-B)]
+Sum-to-Product-Sin:   \sin A + \sin B = 2\sin\left(\frac{A+B}{2}\right)\cos\left(\frac{A-B}{2}\right)
+Sum-to-Product-Cos:   \cos A + \cos B = 2\cos\left(\frac{A+B}{2}\right)\cos\left(\frac{A-B}{2}\right)
+Difference-to-Product-Sin: \sin A - \sin B = 2\cos\left(\frac{A+B}{2}\right)\sin\left(\frac{A-B}{2}\right)
+Difference-to-Product-Cos: \cos A - \cos B = -2\sin\left(\frac{A+B}{2}\right)\sin\left(\frac{A-B}{2}\right)
+Quadratic-Formula:    x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+Binomial-Theorem:     (a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k}b^k
+Geometric-Series:     \sum_{k=0}^{\infty} ar^k = \frac{a}{1-r} \text{ for } |r| < 1
+Arithmetic-Series:    \sum_{k=1}^n k = \frac{n(n+1)}{2}
+Sum-of-Squares:       \sum_{k=1}^n k^2 = \frac{n(n+1)(2n+1)}{6}
+Sum-of-Cubes:         \sum_{k=1}^n k^3 = \left(\frac{n(n+1)}{2}\right)^2
+Factorial:            n! = n \times (n-1) \times \cdots \times 2 \times 1
+Stirling-Approximation: n! \approx \sqrt{2\pi n}\left(\frac{n}{e}\right)^n
+Logarithm-Product:    \log(ab) = \log a + \log b
+Logarithm-Quotient:   \log\left(\frac{a}{b}\right) = \log a - \log b
+Logarithm-Power:      \log(a^n) = n\log a
+Change-of-Base:       \log_b a = \frac{\log_c a}{\log_c b}
+
+# Calculus
+Derivative-Definition: \frac{d}{dx}f(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
+Chain-Rule:           \frac{d}{dx}[f(g(x))] = f'(g(x))g'(x)
+Product-Rule:         \frac{d}{dx}[f(x)g(x)] = f'(x)g(x) + f(x)g'(x)
+Quotient-Rule:        \frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}
+Integration-Parts:    \int u\,dv = uv - \int v\,du
+Fundamental-Theorem:  \int_a^b f'(x)\,dx = f(b) - f(a)
+Taylor-Series:        f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n
+
+# Linear Algebra
+Matrix-Multiplication: (AB)_{ij} = \sum_k A_{ik}B_{kj}
+Determinant-2x2:      \det\begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc
+Eigenvalue:           Av = \lambda v
+Dot-Product:          \mathbf{a} \cdot \mathbf{b} = |\mathbf{a}||\mathbf{b}|\cos\theta
+Cross-Product:        \mathbf{a} \times \mathbf{b} = |\mathbf{a}||\mathbf{b}|\sin\theta\,\mathbf{n}
+LU-Factorization:     A = LU \text{ where } L \text{ is lower triangular, } U \text{ is upper triangular}
+Matrix-Inverse:       AA^{-1} = A^{-1}A = I
+Gram-Schmidt:         \mathbf{u}_k = \mathbf{v}_k - \sum_{j=1}^{k-1} \frac{\langle \mathbf{v}_k, \mathbf{u}_j \rangle}{\langle \mathbf{u}_j, \mathbf{u}_j \rangle}\mathbf{u}_j
+Least-Squares:        \mathbf{x} = (A^TA)^{-1}A^T\mathbf{b}
+PCA-Eigenvalue:       \Sigma\mathbf{v} = \lambda\mathbf{v} \text{ where } \Sigma = \frac{1}{n}X^TX
+Singular-Value-Decomposition: A = U\Sigma V^T
+QR-Decomposition:     A = QR \text{ where } Q \text{ is orthogonal, } R \text{ is upper triangular}
+Cramer-Rule:          x_i = \frac{\det(A_i)}{\det(A)} \text{ where } A_i \text{ replaces column } i \text{ with } \mathbf{b}
+Trace-Property:       \text{tr}(AB) = \text{tr}(BA)
+Frobenius-Norm:       \|A\|_F = \sqrt{\sum_{i,j} |a_{ij}|^2}
+Spectral-Norm:        \|A\|_2 = \max_{\|\mathbf{x}\|_2=1} \|A\mathbf{x}\|_2
+Condition-Number:     \kappa(A) = \|A\| \|A^{-1}\|
+
+# Probability & Statistics
+Normal-Distribution:  f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+Binomial-Distribution: P(X=k) = \binom{n}{k}p^k(1-p)^{n-k}
+Poisson-Distribution: P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}
+Exponential-Distribution: f(x) = \lambda e^{-\lambda x}
+Bayes-Theorem:        P(A|B) = \frac{P(B|A)P(A)}{P(B)}
+Central-Limit-Theorem: \bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
+Geometric-Distribution: P(X=k) = p(1-p)^{k-1}
+Negative-Binomial:    P(X=k) = \binom{k+r-1}{k}p^r(1-p)^k
+Hypergeometric:       P(X=k) = \frac{\binom{K}{k}\binom{N-K}{n-k}}{\binom{N}{n}}
+Uniform-Distribution: f(x) = \frac{1}{b-a} \text{ for } a \leq x \leq b
+Gamma-Distribution:   f(x) = \frac{\beta^\alpha}{\Gamma(\alpha)}x^{\alpha-1}e^{-\beta x}
+Chi-Squared:          f(x) = \frac{1}{2^{k/2}\Gamma(k/2)}x^{k/2-1}e^{-x/2}
+Student-t:            f(x) = \frac{\Gamma((\nu+1)/2)}{\sqrt{\nu\pi}\Gamma(\nu/2)}\left(1+\frac{x^2}{\nu}\right)^{-(\nu+1)/2}
+F-Distribution:       f(x) = \frac{\Gamma((d_1+d_2)/2)}{\Gamma(d_1/2)\Gamma(d_2/2)}\left(\frac{d_1}{d_2}\right)^{d_1/2}\frac{x^{d_1/2-1}}{(1+d_1x/d_2)^{(d_1+d_2)/2}}
+Beta-Distribution:    f(x) = \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1}
+Weibull-Distribution: f(x) = \frac{k}{\lambda}\left(\frac{x}{\lambda}\right)^{k-1}e^{-(x/\lambda)^k}
+Log-Normal:           f(x) = \frac{1}{x\sigma\sqrt{2\pi}}e^{-\frac{(\ln x-\mu)^2}{2\sigma^2}}
+Cauchy-Distribution:  f(x) = \frac{1}{\pi\gamma\left[1+\left(\frac{x-x_0}{\gamma}\right)^2\right]}
+Laplace-Distribution: f(x) = \frac{1}{2b}e^{-|x-\mu|/b}
+Multinomial:          P(X_1=k_1,\ldots,X_r=k_r) = \frac{n!}{k_1!\cdots k_r!}p_1^{k_1}\cdots p_r^{k_r}
+Dirichlet-Distribution: f(x_1,\ldots,x_k) = \frac{\Gamma(\sum_{i=1}^k \alpha_i)}{\prod_{i=1}^k \Gamma(\alpha_i)}\prod_{i=1}^k x_i^{\alpha_i-1}
+Wishart-Distribution: f(X) = \frac{|X|^{(n-p-1)/2}e^{-\text{tr}(\Sigma^{-1}X)/2}}{2^{np/2}|\Sigma|^{n/2}\Gamma_p(n/2)}
+
+# Classical Mechanics
+Newton-Second-Law:    F = ma
+Gravitational-Force:  F = G\frac{m_1m_2}{r^2}
+Kinetic-Energy:       K = \frac{1}{2}mv^2
+Potential-Energy:     U = mgh
+Conservation-Energy:  K_1 + U_1 = K_2 + U_2
+Momentum:             p = mv
+Conservation-Momentum: \sum p_i = \sum p_f
+Angular-Momentum:     L = r \times p
+
+# Electromagnetism
+Coulomb-Law:          F = k\frac{q_1q_2}{r^2}
+Electric-Field:       E = \frac{F}{q}
+Gauss-Law:            \oint \mathbf{E} \cdot d\mathbf{A} = \frac{Q_{enc}}{\epsilon_0}
+Magnetic-Force:       F = q\mathbf{v} \times \mathbf{B}
+Faraday-Law:          \oint \mathbf{E} \cdot d\mathbf{l} = -\frac{d\Phi_B}{dt}
+Ampere-Law:           \oint \mathbf{B} \cdot d\mathbf{l} = \mu_0I_{enc}
+Maxwell-Equations:    \nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_0}, \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
+
+# Thermodynamics
+Ideal-Gas-Law:        PV = nRT
+First-Law:            \Delta U = Q - W
+Second-Law:           \Delta S \geq \frac{Q}{T}
+Entropy:              S = k_B \ln W
+Boltzmann-Distribution: P(E) \propto e^{-E/k_BT}
+
+# Quantum Mechanics
+Schrodinger-Equation: i\hbar\frac{\partial}{\partial t}\Psi = \hat{H}\Psi
+Heisenberg-Uncertainty: \Delta x \Delta p \geq \frac{\hbar}{2}
+Planck-Energy:        E = h\nu
+De-Broglie-Wavelength: \lambda = \frac{h}{p}
+Wave-Function:        \Psi(x,t) = Ae^{i(kx-\omega t)}
+
+# Relativity
+Mass-Energy:          E = mc^2
+Time-Dilation:        t = \frac{t_0}{\sqrt{1-v^2/c^2}}
+Length-Contraction:   L = L_0\sqrt{1-v^2/c^2}
+Relativistic-Momentum: p = \frac{mv}{\sqrt{1-v^2/c^2}}
+Relativistic-Energy:  E = \sqrt{(pc)^2 + (mc^2)^2}
+
+# Fluid Dynamics
+Navier-Stokes:        \rho \left(\frac{\partial \mathbf{v}}{\partial t} + \mathbf{v} \cdot \nabla \mathbf{v}\right) = -\nabla p + \mu \nabla^2 \mathbf{v} + \mathbf{f}
+Continuity-Equation:  \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho\mathbf{v}) = 0
+Bernoulli-Equation:   p + \frac{1}{2}\rho v^2 + \rho gh = \text{constant}
+Incompressible-Navier-Stokes: \frac{\partial \mathbf{v}}{\partial t} + \mathbf{v} \cdot \nabla \mathbf{v} = -\frac{1}{\rho}\nabla p + \nu \nabla^2 \mathbf{v}
+Boussinesq-Approximation: \rho = \rho_0[1-\beta(T-T_0)] \text{ where } \beta = -\frac{1}{\rho_0}\frac{\partial \rho}{\partial T}
+Euler-Equations:      \frac{\partial \mathbf{v}}{\partial t} + \mathbf{v} \cdot \nabla \mathbf{v} = -\frac{1}{\rho}\nabla p
+Stokes-Equations:     \nabla p = \mu \nabla^2 \mathbf{v}, \nabla \cdot \mathbf{v} = 0
+Reynolds-Number:      Re = \frac{\rho v L}{\mu}
+Prandtl-Number:       Pr = \frac{\mu c_p}{k}
+Rayleigh-Number:      Ra = \frac{g\beta\Delta T L^3}{\nu\alpha}
+Froude-Number:        Fr = \frac{v}{\sqrt{gL}}
+Mach-Number:          Ma = \frac{v}{c}
+Vorticity-Transport:  \frac{D\boldsymbol{\omega}}{Dt} = (\boldsymbol{\omega} \cdot \nabla)\mathbf{v} + \nu \nabla^2 \boldsymbol{\omega}
+Kelvin-Circulation:   \frac{D\Gamma}{Dt} = 0 \text{ where } \Gamma = \oint_C \mathbf{v} \cdot d\mathbf{l}
+Helmholtz-Decomposition: \mathbf{v} = \nabla \phi + \nabla \times \mathbf{A}
+Potential-Flow:       \nabla^2 \phi = 0
+Boundary-Layer:       \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = 0, u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} = \nu\frac{\partial^2 u}{\partial y^2}
+Orr-Sommerfeld:       \left(\frac{d^2}{dy^2} - k^2\right)^2 \hat{v} = ikRe(U-c)\left(\frac{d^2}{dy^2} - k^2\right)\hat{v}
+Shallow-Water:        \frac{\partial h}{\partial t} + \nabla \cdot (h\mathbf{v}) = 0, \frac{\partial \mathbf{v}}{\partial t} + \mathbf{v} \cdot \nabla \mathbf{v} = -g\nabla h
+
+# Signal Processing
+Fourier-Transform:    F(\omega) = \int_{-\infty}^{\infty} f(t)e^{-i\omega t}dt
+Inverse-Fourier:      f(t) = \frac{1}{2\pi}\int_{-\infty}^{\infty} F(\omega)e^{i\omega t}d\omega
+Nyquist-Theorem:      f_s > 2f_{max}
 
