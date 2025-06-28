@@ -1,0 +1,16 @@
+def p(a, b) = \frac{\partial a}{\partial b}
+
+
+gcode example
+
+g1 x10 y10
+g1 x20 y21
+g1 x30 y30 z30
+
+
+def E(xv,yv)  g1 x{xv} y{yv}
+def 
+
+00 10 10
+00 20 21
+01 30 30 30
