@@ -2,7 +2,9 @@
 
 ## Technical Description
 
-<!-- Complete the sections on Technical Description (for an audience who know differential and integral calculus, algebra, trig, and general first year engineering knowledge -->
+<!-- Complete the sections on Technical Description (for an audience who know differential and integral calculus, algebra, trig, and general first year engineering knowledge 
+Use Fleisch-Kincaid/math levelled reading to make sure reader is matched to appropriate content
+-->
 
 The Boltzmann equation is a partial differential equation that describes the evolution of the single-particle distribution function in a dilute gas. It combines:
 
