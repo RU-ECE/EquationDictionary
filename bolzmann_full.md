@@ -6,8 +6,6 @@
 
 The Boltzmann equation is a partial differential equation that describes the evolution of the single-particle distribution function in a dilute gas. It combines:
 
-$\frac{\partial f}{\partial t}$
-
 **Left-hand side terms:**
 1. **Convective term**
    $\frac{\partial f}{\partial t}$
