@@ -45,6 +45,7 @@ Imagine you're watching a crowd of people moving around in a large room. The Bol
 ## See also
 
 ### Technical Resources
+- Explanation of math including differential equations, partial differential equations, vectors...
 - [Wolfram MathWorld - Boltzmann Transport Equation](https://mathworld.wolfram.com/BoltzmannTransportEquation.html) - Mathematical formulation and derivations
 - [MIT OpenCourseWare - Statistical Physics](https://ocw.mit.edu/courses/physics/8-333-statistical-mechanics-i-statistical-mechanics-of-particles-fall-2013/) - Free course materials on statistical mechanics
 - [Scholarpedia - Boltzmann Equation](http://www.scholarpedia.org/article/Boltzmann_equation) - Peer-reviewed encyclopedia article
