@@ -7,7 +7,8 @@ The reasons for this effort are:
 
 * To allow papers to generate equations that can provide a link for blind users that 
 will read the equation and give a written English description of it because Braille
-only allows for English letters, not all the symbols of mathematics.
+only allows for English letters, not all the symbols of mathematics. There is Braille math
+but it is unclear how many people know it.
 
 * To define a dictionary that documents each symbol and component used, much
 as coding libraries document the parameters of functions, and classes.
