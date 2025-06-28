@@ -21,6 +21,22 @@ A + \frac{B}{C} \newline
 A + \frac{B}{\frac{C}{\frac{D}{E}}}
 $$
 
+Do we describe the semantics of the operation, for example subset, or do we also have to describe the visual of the symbol so a blind person could describe the symbol that they are not using to someone else?
+
+$$
+A \subset B, B \subsetneq C, A \subseteq B, A \supset B, A \supseteq B, A \supsetneq B
+\newline
+A \in B, A \notin B, A \ni B, A \cap B, A \cup B, A \setminus B, A \triangle B
+\newline
+
+\{ \} \quad [ ] \quad ( ) \quad \langle \rangle \quad | | \quad \| \|
+\newline
+\mathbb{R} \quad \mathbb{C} \quad \mathbb{Z} \quad \mathbb{N} \quad \mathbb{Q}
+\newline
+
+$$
+
+
 There appear to be bugs in MathJAX rendering.
 Is this true in LaTeX too?
 $$
