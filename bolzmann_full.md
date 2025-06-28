@@ -25,7 +25,7 @@ Where $\sigma(\Omega)$ is the differential scattering cross-section, and primed 
 
 **Solution methods:** Analytical solutions exist only for special cases (Maxwell-Boltzmann distribution at equilibrium). Numerical methods include Direct Simulation Monte Carlo (DSMC) and lattice Boltzmann methods for computational fluid dynamics applications.
 
-## General Explanation
+## General Explanation (By Communities of interest)
 
 <!-- Write a general description, including a comment with the prompt, explaining to a general audience with an 8th grade vocabulary -->
 
