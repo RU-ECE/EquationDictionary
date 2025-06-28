@@ -12,7 +12,7 @@ The Boltzmann equation is a partial differential equation that describes the evo
 3. **Force term** $\frac{\mathbf{F}}{m} \cdot \nabla_v f$: Acceleration in velocity space due to external forces (gravity, electromagnetic fields, etc.)
 
 **Right-hand side:**
-- **Collision integral** $\left(\frac{\partial f}{\partial t}\right)_\text{coll}$: Net effect of binary collisions between particles, typically written as:
+- **Collision integral** $\left(\frac{\partial f}{\partial t}\right)_\text{coll}$ Net effect of binary collisions between particles, typically written as:
   $$\left(\frac{\partial f}{\partial t}\right)_\text{coll} = \int d^3v_1 \int d\Omega \, \sigma(\Omega) |\mathbf{v} - \mathbf{v}_1| [f(\mathbf{r}, \mathbf{v}', t) f(\mathbf{r}, \mathbf{v}_1', t) - f(\mathbf{r}, \mathbf{v}, t) f(\mathbf{r}, \mathbf{v}_1, t)]$$
 
 Where $\sigma(\Omega)$ is the differential scattering cross-section, and primed velocities represent post-collision states.
