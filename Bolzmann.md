@@ -4,6 +4,8 @@ $$
 \frac{\partial f}{\partial t} + \mathbf{v} \cdot \nabla f + \frac{\mathbf{F}}{m} \cdot \nabla_v f = \left(\frac{\partial f}{\partial t}\right)_\text{coll}
 $$
 
+<!-- partial f with respect to t plus v dot del f + cap F over m -->
+
 ## Variables
 - $f(\mathbf{r}, \mathbf{v}, t)$ - Distribution function (number of particles per unit volume in phase space)
 - $\mathbf{r}$ - Position vector
