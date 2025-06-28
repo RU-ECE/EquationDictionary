@@ -7,9 +7,11 @@
 The Boltzmann equation is a partial differential equation that describes the evolution of the single-particle distribution function in a dilute gas. It combines:
 
 **Left-hand side terms:**
-1. **Convective term** $\frac{\partial f}{\partial t}$: Local time derivative representing accumulation/depletion at a fixed point in phase space
-2. **Advection term** $\mathbf{v} \cdot \nabla f$: Spatial transport due to particle motion through position space
-3. **Force term** $\frac{\mathbf{F}}{m} \cdot \nabla_v f$: Acceleration in velocity space due to external forces (gravity, electromagnetic fields, etc.)
+1. **Convective term**
+   $\frac{\partial f}{\partial t}$
+   Local time derivative representing accumulation/depletion at a fixed point in phase space
+3. **Advection term** $\mathbf{v} \cdot \nabla f$: Spatial transport due to particle motion through position space
+4. **Force term** $\frac{\mathbf{F}}{m} \cdot \nabla_v f$: Acceleration in velocity space due to external forces (gravity, electromagnetic fields, etc.)
 
 **Right-hand side:**
 - **Collision integral** $\left(\frac{\partial f}{\partial t}\right)_\text{coll}$ Net effect of binary collisions between particles, typically written as:
