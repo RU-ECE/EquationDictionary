@@ -1,4 +1,9 @@
-# Fundamental Identities
+# equation dictionary proposed format
+# comments begin with #
+# blank lines are ignored
+# segments are named with brackets []
+
+[ident] # Fundamental Identities
 Euler-Identity:       e^{i\pi} + 1 = 0
 Euler-Formula:        e^{ix} = \cos x + i\sin x
 De-Moivre:            (\cos x + i\sin x)^n = \cos(nx) + i\sin(nx)
@@ -31,7 +36,7 @@ Logarithm-Quotient:   \log\left(\frac{a}{b}\right) = \log a - \log b
 Logarithm-Power:      \log(a^n) = n\log a
 Change-of-Base:       \log_b a = \frac{\log_c a}{\log_c b}
 
-# Calculus
+[calc] # Calculus
 Derivative-Definition: \frac{d}{dx}f(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}
 Chain-Rule:           \frac{d}{dx}[f(g(x))] = f'(g(x))g'(x)
 Product-Rule:         \frac{d}{dx}[f(x)g(x)] = f'(x)g(x) + f(x)g'(x)
@@ -40,7 +45,7 @@ Integration-Parts:    \int u\,dv = uv - \int v\,du
 Fundamental-Theorem:  \int_a^b f'(x)\,dx = f(b) - f(a)
 Taylor-Series:        f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n
 
-# Linear Algebra
+[lin] # Linear Algebra
 Matrix-Multiplication: (AB)_{ij} = \sum_k A_{ik}B_{kj}
 Determinant-2x2:      \det\begin{pmatrix} a & b \\ c & d \end{pmatrix} = ad - bc
 Eigenvalue:           Av = \lambda v
@@ -59,7 +64,30 @@ Frobenius-Norm:       \|A\|_F = \sqrt{\sum_{i,j} |a_{ij}|^2}
 Spectral-Norm:        \|A\|_2 = \max_{\|\mathbf{x}\|_2=1} \|A\mathbf{x}\|_2
 Condition-Number:     \kappa(A) = \|A\| \|A^{-1}\|
 
-# Probability & Statistics
+[bool] # Boolean Algebra
+De-Morgan-And:        \overline{A \cdot B} = \overline{A} + \overline{B}
+De-Morgan-Or:         \overline{A + B} = \overline{A} \cdot \overline{B}
+Distributive-And:     A \cdot (B + C) = (A \cdot B) + (A \cdot C)
+Distributive-Or:      A + (B \cdot C) = (A + B) \cdot (A + C)
+Associative-And:      A \cdot (B \cdot C) = (A \cdot B) \cdot C
+Associative-Or:       A + (B + C) = (A + B) + C
+Commutative-And:      A \cdot B = B \cdot A
+Commutative-Or:       A + B = B + A
+Identity-And:         A \cdot 1 = A
+Identity-Or:          A + 0 = A
+Null-And:             A \cdot 0 = 0
+Null-Or:              A + 1 = 1
+Idempotent-And:       A \cdot A = A
+Idempotent-Or:        A + A = A
+Complement-And:       A \cdot \overline{A} = 0
+Complement-Or:        A + \overline{A} = 1
+Double-Negation:      \overline{\overline{A}} = A
+Absorption-And:       A \cdot (A + B) = A
+Absorption-Or:        A + (A \cdot B) = A
+Consensus-And:        A \cdot B + \overline{A} \cdot C + B \cdot C = A \cdot B + \overline{A} \cdot C
+Consensus-Or:         (A + B) \cdot (\overline{A} + C) \cdot (B + C) = (A + B) \cdot (\overline{A} + C)
+
+[prob] # Probability & Statistics
 Normal-Distribution:  f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
 Binomial-Distribution: P(X=k) = \binom{n}{k}p^k(1-p)^{n-k}
 Poisson-Distribution: P(X=k) = \frac{\lambda^k e^{-\lambda}}{k!}
@@ -83,7 +111,7 @@ Multinomial:          P(X_1=k_1,\ldots,X_r=k_r) = \frac{n!}{k_1!\cdots k_r!}p_1^
 Dirichlet-Distribution: f(x_1,\ldots,x_k) = \frac{\Gamma(\sum_{i=1}^k \alpha_i)}{\prod_{i=1}^k \Gamma(\alpha_i)}\prod_{i=1}^k x_i^{\alpha_i-1}
 Wishart-Distribution: f(X) = \frac{|X|^{(n-p-1)/2}e^{-\text{tr}(\Sigma^{-1}X)/2}}{2^{np/2}|\Sigma|^{n/2}\Gamma_p(n/2)}
 
-# Classical Mechanics
+[mech] # Classical Mechanics
 Newton-Second-Law:    F = ma
 Gravitational-Force:  F = G\frac{m_1m_2}{r^2}
 Kinetic-Energy:       K = \frac{1}{2}mv^2
@@ -93,7 +121,7 @@ Momentum:             p = mv
 Conservation-Momentum: \sum p_i = \sum p_f
 Angular-Momentum:     L = r \times p
 
-# Electromagnetism
+[em] # Electromagnetism
 Coulomb-Law:          F = k\frac{q_1q_2}{r^2}
 Electric-Field:       E = \frac{F}{q}
 Gauss-Law:            \oint \mathbf{E} \cdot d\mathbf{A} = \frac{Q_{enc}}{\epsilon_0}
@@ -102,28 +130,28 @@ Faraday-Law:          \oint \mathbf{E} \cdot d\mathbf{l} = -\frac{d\Phi_B}{dt}
 Ampere-Law:           \oint \mathbf{B} \cdot d\mathbf{l} = \mu_0I_{enc}
 Maxwell-Equations:    \nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_0}, \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
 
-# Thermodynamics
+[therm] # Thermodynamics
 Ideal-Gas-Law:        PV = nRT
 First-Law:            \Delta U = Q - W
 Second-Law:           \Delta S \geq \frac{Q}{T}
 Entropy:              S = k_B \ln W
 Boltzmann-Distribution: P(E) \propto e^{-E/k_BT}
 
-# Quantum Mechanics
+[qm] # Quantum Mechanics
 Schrodinger-Equation: i\hbar\frac{\partial}{\partial t}\Psi = \hat{H}\Psi
 Heisenberg-Uncertainty: \Delta x \Delta p \geq \frac{\hbar}{2}
 Planck-Energy:        E = h\nu
 De-Broglie-Wavelength: \lambda = \frac{h}{p}
 Wave-Function:        \Psi(x,t) = Ae^{i(kx-\omega t)}
 
-# Relativity
+[rel] # Relativity
 Mass-Energy:          E = mc^2
 Time-Dilation:        t = \frac{t_0}{\sqrt{1-v^2/c^2}}
 Length-Contraction:   L = L_0\sqrt{1-v^2/c^2}
 Relativistic-Momentum: p = \frac{mv}{\sqrt{1-v^2/c^2}}
 Relativistic-Energy:  E = \sqrt{(pc)^2 + (mc^2)^2}
 
-# Fluid Dynamics
+[fd] # Fluid Dynamics
 Navier-Stokes:        \rho \left(\frac{\partial \mathbf{v}}{\partial t} + \mathbf{v} \cdot \nabla \mathbf{v}\right) = -\nabla p + \mu \nabla^2 \mathbf{v} + \mathbf{f}
 Continuity-Equation:  \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho\mathbf{v}) = 0
 Bernoulli-Equation:   p + \frac{1}{2}\rho v^2 + \rho gh = \text{constant}
@@ -144,8 +172,210 @@ Boundary-Layer:       \frac{\partial u}{\partial x} + \frac{\partial v}{\partial
 Orr-Sommerfeld:       \left(\frac{d^2}{dy^2} - k^2\right)^2 \hat{v} = ikRe(U-c)\left(\frac{d^2}{dy^2} - k^2\right)\hat{v}
 Shallow-Water:        \frac{\partial h}{\partial t} + \nabla \cdot (h\mathbf{v}) = 0, \frac{\partial \mathbf{v}}{\partial t} + \mathbf{v} \cdot \nabla \mathbf{v} = -g\nabla h
 
-# Signal Processing
+[sp] # Signal Processing
 Fourier-Transform:    F(\omega) = \int_{-\infty}^{\infty} f(t)e^{-i\omega t}dt
 Inverse-Fourier:      f(t) = \frac{1}{2\pi}\int_{-\infty}^{\infty} F(\omega)e^{i\omega t}d\omega
 Nyquist-Theorem:      f_s > 2f_{max}
+Discrete-Fourier:     X_k = \sum_{n=0}^{N-1} x_n e^{-i2\pi kn/N}
+Fast-Fourier:         X_k = \sum_{n=0}^{N/2-1} x_{2n} e^{-i2\pi kn/(N/2)} + e^{-i2\pi k/N} \sum_{n=0}^{N/2-1} x_{2n+1} e^{-i2\pi kn/(N/2)}
+Convolution:          (f * g)(t) = \int_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau
+Cross-Correlation:    (f \star g)(t) = \int_{-\infty}^{\infty} f^*(\tau)g(t+\tau)d\tau
+Autocorrelation:      R_f(t) = \int_{-\infty}^{\infty} f^*(\tau)f(t+\tau)d\tau
+Power-Spectral-Density: S_x(f) = |X(f)|^2
+Wiener-Khinchin:      S_x(f) = \mathcal{F}\{R_x(t)\}
+Continuous-Wavelet-Transform: W_x(a,b) = \frac{1}{\sqrt{|a|}} \int_{-\infty}^{\infty} x(t) \psi^*\left(\frac{t-b}{a}\right) dt
+Discrete-Wavelet-Transform: W_{j,k} = \int_{-\infty}^{\infty} x(t) \psi_{j,k}(t) dt
+Wavelet-Synthesis:    x(t) = \sum_{j,k} W_{j,k} \psi_{j,k}(t)
+Haar-Wavelet:         \psi(t) = \begin{cases} 1 & 0 \leq t < 1/2 \\ -1 & 1/2 \leq t < 1 \\ 0 & \text{otherwise} \end{cases}
+Daubechies-Wavelet:   \psi(t) = \sum_{k} (-1)^k h_{1-k} \phi(2t-k)
+Scaling-Function:     \phi(t) = \sum_{k} h_k \phi(2t-k)
+Wavelet-Energy:       E = \sum_{j,k} |W_{j,k}|^2
+Mallat-Algorithm:     W_{j+1,k} = \sum_{n} h_{n-2k} W_{j,n}
 
+[info] # Information Theory
+Shannon-Entropy:      H(X) = -\sum_{i=1}^n p_i \log_2 p_i
+Joint-Entropy:        H(X,Y) = -\sum_{x,y} p(x,y) \log_2 p(x,y)
+Conditional-Entropy:  H(X|Y) = -\sum_{x,y} p(x,y) \log_2 p(x|y)
+Mutual-Information:   I(X;Y) = H(X) - H(X|Y) = H(Y) - H(Y|X)
+Channel-Capacity:     C = \max_{p(x)} I(X;Y)
+Shannon-Hartley:      C = B \log_2(1 + \frac{S}{N})
+Kraft-Inequality:     \sum_{i=1}^n 2^{-l_i} \leq 1
+Huffman-Code:         L = \sum_{i=1}^n p_i l_i
+Fano-Inequality:      H(X|Y) \leq H_b(P_e) + P_e \log_2(|X|-1)
+Data-Processing:      I(X;Y) \geq I(X;Z) \text{ if } X \rightarrow Y \rightarrow Z
+
+[opt] # Optimization
+Lagrange-Multipliers: \nabla f = \lambda \nabla g
+Karush-Kuhn-Tucker:  \nabla f + \sum_{i=1}^m \lambda_i \nabla g_i + \sum_{j=1}^p \mu_j \nabla h_j = 0
+Linear-Programming:   \max c^Tx \text{ subject to } Ax \leq b, x \geq 0
+Quadratic-Programming: \min \frac{1}{2}x^TQx + c^Tx \text{ subject to } Ax \leq b
+Gradient-Descent:     x_{k+1} = x_k - \alpha \nabla f(x_k)
+Newton-Method:        x_{k+1} = x_k - [\nabla^2 f(x_k)]^{-1} \nabla f(x_k)
+Conjugate-Gradient:   x_{k+1} = x_k + \alpha_k p_k
+Simplex-Method:       \text{Basic feasible solution: } x_B = B^{-1}b
+Duality-Principle:    \max c^Tx \leq \min b^Ty \text{ where } A^Ty \geq c
+Kuhn-Tucker:          \text{If } x^* \text{ is optimal, then } \nabla f(x^*) + \sum \lambda_i \nabla g_i(x^*) = 0
+
+[ml] # Machine Learning
+Linear-Regression:    y = \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p + \epsilon
+Logistic-Regression:  P(Y=1|X) = \frac{1}{1 + e^{-(\beta_0 + \beta^T X)}}
+Ridge-Regression:     \min \|y - X\beta\|^2 + \lambda \|\beta\|^2
+Lasso-Regression:     \min \|y - X\beta\|^2 + \lambda \|\beta\|_1
+Support-Vector-Machine: \min \frac{1}{2}\|w\|^2 + C \sum_{i=1}^n \xi_i
+Neural-Network:       a^{(l+1)} = \sigma(W^{(l)}a^{(l)} + b^{(l)})
+Backpropagation:      \delta^{(l)} = (W^{(l+1)})^T \delta^{(l+1)} \odot \sigma'(z^{(l)})
+Cross-Entropy-Loss:   L = -\sum_{i=1}^n y_i \log(\hat{y}_i)
+Gradient-Boosting:    F_m(x) = F_{m-1}(x) + \nu \sum_{j=1}^J \gamma_{jm} I(x \in R_{jm})
+Random-Forest:        \hat{f}(x) = \frac{1}{B} \sum_{b=1}^B T_b(x)
+
+[graph] # Graph Theory
+Euler-Formula:        V - E + F = 2
+Handshake-Lemma:      \sum_{v \in V} \deg(v) = 2|E|
+Planar-Graph:         |E| \leq 3|V| - 6
+Dijkstra-Algorithm:   d[v] = \min(d[v], d[u] + w(u,v))
+Floyd-Warshall:       d_{ij}^{(k)} = \min(d_{ij}^{(k-1)}, d_{ik}^{(k-1)} + d_{kj}^{(k-1)})
+Minimum-Spanning-Tree: \text{Total weight} = \sum_{e \in T} w(e)
+Max-Flow-Min-Cut:     \max |f| = \min c(S,\bar{S})
+Konig-Theorem:        \alpha'(G) + \beta'(G) = |V|
+Ramsey-Number:        R(s,t) = \min\{n : \text{every } K_n \text{ contains } K_s \text{ or } \bar{K}_t\}
+Chromatic-Number:     \chi(G) = \min\{k : G \text{ is } k\text{-colorable}\}
+
+[comp] # Computational Complexity
+Big-O-Notation:       f(n) = O(g(n)) \text{ if } |f(n)| \leq c|g(n)| \text{ for } n \geq n_0
+Big-Omega-Notation:   f(n) = \Omega(g(n)) \text{ if } |f(n)| \geq c|g(n)| \text{ for } n \geq n_0
+Big-Theta-Notation:   f(n) = \Theta(g(n)) \text{ if } f(n) = O(g(n)) \text{ and } f(n) = \Omega(g(n))
+Master-Theorem:       T(n) = aT(n/b) + f(n) \text{ where } f(n) = O(n^c)
+Recurrence-Relation:  T(n) = 2T(n/2) + O(n) = O(n \log n)
+NP-Complete:          \text{Problem } P \text{ is NP-complete if } P \in NP \text{ and } P \text{ is NP-hard}
+P-vs-NP:              P \subseteq NP \text{ but is } P = NP?
+Cook-Levin:           \text{SAT is NP-complete}
+Reduction:            A \leq_p B \text{ means } A \text{ reduces to } B \text{ in polynomial time}
+Space-Complexity:     \text{SPACE}(f(n)) = \{L : L \text{ can be decided in } O(f(n)) \text{ space}\}
+
+[geo] # Geometry
+Pythagorean-Theorem:  a^2 + b^2 = c^2
+Distance-Formula:     d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}
+Midpoint-Formula:     M = \left(\frac{x_1+x_2}{2}, \frac{y_1+y_2}{2}\right)
+Slope-Formula:        m = \frac{y_2-y_1}{x_2-x_1}
+Point-Slope:          y - y_1 = m(x - x_1)
+Slope-Intercept:      y = mx + b
+Circle-Equation:      (x-h)^2 + (y-k)^2 = r^2
+Ellipse-Equation:     \frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1
+Hyperbola-Equation:   \frac{(x-h)^2}{a^2} - \frac{(y-k)^2}{b^2} = 1
+Parabola-Equation:    y = a(x-h)^2 + k
+Area-Circle:          A = \pi r^2
+Circumference:        C = 2\pi r
+Area-Triangle:        A = \frac{1}{2}bh
+Heron-Formula:        A = \sqrt{s(s-a)(s-b)(s-c)} \text{ where } s = \frac{a+b+c}{2}
+Volume-Sphere:        V = \frac{4}{3}\pi r^3
+Surface-Area-Sphere:  S = 4\pi r^2
+Volume-Cylinder:      V = \pi r^2h
+Surface-Area-Cylinder: S = 2\pi r^2 + 2\pi rh
+
+[alg] # Abstract Algebra
+Group-Axioms:         \text{Closure: } a \cdot b \in G, \text{ Associativity: } (a \cdot b) \cdot c = a \cdot (b \cdot c), \text{ Identity: } e \cdot a = a, \text{ Inverse: } a \cdot a^{-1} = e
+Ring-Axioms:          \text{Additive group + multiplicative semigroup + distributivity}
+Field-Axioms:         \text{Ring + multiplicative inverses for non-zero elements}
+Lagrange-Theorem:     |H| \text{ divides } |G| \text{ for subgroup } H \text{ of finite group } G
+First-Isomorphism:    G/\ker(f) \cong \text{im}(f)
+Sylow-Theorem:        \text{If } p^k \text{ divides } |G|, \text{ then } G \text{ has a subgroup of order } p^k
+Fundamental-Theorem:  \text{Every finite abelian group is isomorphic to } \mathbb{Z}_{p_1^{a_1}} \times \cdots \times \mathbb{Z}_{p_k^{a_k}}
+Galois-Theory:        \text{Field extension } E/F \text{ is Galois if } |\text{Gal}(E/F)| = [E:F]
+Cayley-Theorem:       \text{Every group is isomorphic to a subgroup of } S_n
+Jordan-Holder:        \text{Composition series are unique up to isomorphism}
+
+[top] # Topology
+Continuity-Definition: f^{-1}(U) \text{ is open for every open } U
+Homeomorphism:        f: X \rightarrow Y \text{ is bijective, continuous, with continuous inverse}
+Connected-Space:      X \text{ cannot be written as union of two disjoint non-empty open sets}
+Compact-Space:        \text{Every open cover has a finite subcover}
+Hausdorff-Space:      \text{For any } x \neq y, \text{ there exist disjoint open sets } U, V \text{ with } x \in U, y \in V
+Fundamental-Group:    \pi_1(X,x_0) = \text{group of homotopy classes of loops at } x_0
+Brouwer-Fixed-Point:  \text{Every continuous } f: D^n \rightarrow D^n \text{ has a fixed point}
+Poincare-Duality:     H_k(M) \cong H^{n-k}(M) \text{ for closed orientable } n\text{-manifold } M
+Mayer-Vietoris:       \cdots \rightarrow H_n(A \cap B) \rightarrow H_n(A) \oplus H_n(B) \rightarrow H_n(X) \rightarrow H_{n-1}(A \cap B) \rightarrow \cdots
+Van-Kampen-Theorem:   \pi_1(X) = \pi_1(U) *_{\pi_1(U \cap V)} \pi_1(V)
+
+[anal] # Real Analysis
+Epsilon-Delta:        |f(x) - L| < \epsilon \text{ whenever } 0 < |x - a| < \delta
+Uniform-Convergence:  \sup_{x \in A} |f_n(x) - f(x)| < \epsilon \text{ for } n \geq N
+Weierstrass-Theorem:  \text{Every bounded sequence has a convergent subsequence}
+Bolzano-Weierstrass:  \text{Every bounded infinite set has a limit point}
+Heine-Borel:          \text{Subset of } \mathbb{R}^n \text{ is compact iff closed and bounded}
+Intermediate-Value:   \text{If } f(a) < c < f(b), \text{ then } f(x) = c \text{ for some } x \in (a,b)
+Mean-Value-Theorem:   f(b) - f(a) = f'(c)(b-a) \text{ for some } c \in (a,b)
+Taylor-Theorem:       f(x) = \sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k + R_n(x)
+Riemann-Integral:     \int_a^b f(x)dx = \lim_{n \rightarrow \infty} \sum_{i=1}^n f(x_i^*)\Delta x_i
+Lebesgue-Integral:    \int_X f d\mu = \sup\{\int_X s d\mu : s \text{ simple, } 0 \leq s \leq f\}
+
+[func] # Functional Analysis
+Norm-Definition:      \|x\| \geq 0, \|x\| = 0 \iff x = 0, \|\alpha x\| = |\alpha|\|x\|, \|x+y\| \leq \|x\| + \|y\|
+Inner-Product:        \langle x,y \rangle = \overline{\langle y,x \rangle}, \langle \alpha x + \beta y, z \rangle = \alpha\langle x,z \rangle + \beta\langle y,z \rangle
+Cauchy-Schwarz:       |\langle x,y \rangle| \leq \|x\| \|y\|
+Triangle-Inequality:  \|x + y\| \leq \|x\| + \|y\|
+Banach-Space:         \text{Complete normed vector space}
+Hilbert-Space:        \text{Complete inner product space}
+Riesz-Representation: \text{Every bounded linear functional } f \text{ on Hilbert space } H \text{ is } f(x) = \langle x,y \rangle
+Hahn-Banach:          \text{Every bounded linear functional on subspace extends to whole space}
+Open-Mapping:         \text{Surjective bounded linear operator between Banach spaces is open}
+Closed-Graph:         \text{Linear operator with closed graph is bounded}
+
+[ode] # Ordinary Differential Equations
+First-Order-Linear:   y' + P(x)y = Q(x) \Rightarrow y = e^{-\int P(x)dx}\left(\int Q(x)e^{\int P(x)dx}dx + C\right)
+Separable-Equation:   \frac{dy}{dx} = f(x)g(y) \Rightarrow \int \frac{dy}{g(y)} = \int f(x)dx
+Exact-Equation:       M(x,y)dx + N(x,y)dy = 0 \text{ where } \frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}
+Integrating-Factor:   \mu(x) = e^{\int P(x)dx} \text{ for } y' + P(x)y = Q(x)
+Second-Order-Linear:  ay'' + by' + cy = f(x) \Rightarrow y = y_h + y_p
+Characteristic-Equation: ar^2 + br + c = 0
+Variation-Parameters: y_p = -y_1 \int \frac{y_2 f}{W}dx + y_2 \int \frac{y_1 f}{W}dx
+Wronskian:            W(y_1,y_2) = y_1y_2' - y_1'y_2
+Laplace-Transform:    F(s) = \mathcal{L}\{f(t)\} = \int_0^{\infty} e^{-st}f(t)dt
+Inverse-Laplace:      f(t) = \mathcal{L}^{-1}\{F(s)\} = \frac{1}{2\pi i} \int_{c-i\infty}^{c+i\infty} e^{st}F(s)ds
+
+[pde] # Partial Differential Equations
+Laplace-Equation:     \nabla^2 u = 0
+Poisson-Equation:     \nabla^2 u = f
+Heat-Equation:        \frac{\partial u}{\partial t} = \alpha \nabla^2 u
+Wave-Equation:        \frac{\partial^2 u}{\partial t^2} = c^2 \nabla^2 u
+Transport-Equation:   \frac{\partial u}{\partial t} + \mathbf{v} \cdot \nabla u = 0
+Method-Characteristics: \frac{dx}{dt} = a, \frac{dy}{dt} = b, \frac{du}{dt} = c
+Separation-Variables: u(x,t) = X(x)T(t)
+Fourier-Series:       f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left(a_n \cos\frac{n\pi x}{L} + b_n \sin\frac{n\pi x}{L}\right)
+Green-Function:       u(x) = \int G(x,\xi)f(\xi)d\xi
+Method-Images:        \text{Use image sources to satisfy boundary conditions}
+
+[control] # Control Theory
+Transfer-Function:    G(s) = \frac{Y(s)}{U(s)} = \frac{b_ms^m + \cdots + b_0}{a_ns^n + \cdots + a_0}
+State-Space:          \dot{x} = Ax + Bu, y = Cx + Du
+Controllability:      \text{rank}[B \ AB \ A^2B \ \cdots \ A^{n-1}B] = n
+Observability:        \text{rank}[C^T \ A^TC^T \ (A^T)^2C^T \ \cdots \ (A^T)^{n-1}C^T] = n
+PID-Controller:       u(t) = K_p e(t) + K_i \int_0^t e(\tau)d\tau + K_d \frac{de(t)}{dt}
+Root-Locus:           \text{Locus of roots of } 1 + KG(s) = 0 \text{ as } K \text{ varies}
+Nyquist-Criterion:    N = P - Z \text{ where } N \text{ is number of encirclements of } -1
+Bode-Plot:            |G(j\omega)|_{dB} = 20\log_{10}|G(j\omega)|, \angle G(j\omega) = \tan^{-1}\frac{\text{Im}(G)}{\text{Re}(G)}
+Lyapunov-Stability:   V(x) > 0, \dot{V}(x) < 0 \text{ for } x \neq 0
+Kalman-Filter:        \hat{x}_{k+1} = F\hat{x}_k + K_k(y_k - HF\hat{x}_k)
+
+[game] # Game Theory
+Nash-Equilibrium:     \text{Strategy profile } s^* \text{ where no player can improve by deviating}
+Pareto-Optimal:       \text{No player can be made better off without making another worse off}
+Minimax-Theorem:      \max_x \min_y f(x,y) = \min_y \max_x f(x,y)
+Shapley-Value:        \phi_i(v) = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|!(n-|S|-1)!}{n!}[v(S \cup \{i\}) - v(S)]
+Prisoners-Dilemma:    \text{Payoff matrix: } \begin{pmatrix} (3,3) & (0,5) \\ (5,0) & (1,1) \end{pmatrix}
+Zero-Sum-Game:        \sum_{i=1}^n u_i(s) = 0 \text{ for all strategy profiles } s
+Mixed-Strategy:       \sigma_i = \sum_{j=1}^m p_j s_j \text{ where } \sum_{j=1}^m p_j = 1
+Backward-Induction:   \text{Solve game tree from leaves to root}
+Coalition-Game:       v: 2^N \rightarrow \mathbb{R} \text{ where } v(\emptyset) = 0
+Core:                 \text{Set of imputations } x \text{ where } \sum_{i \in S} x_i \geq v(S) \text{ for all } S
+
+[finance] # Financial Mathematics
+Present-Value:        PV = \frac{FV}{(1+r)^n}
+Future-Value:         FV = PV(1+r)^n
+Annuity-Present-Value: PV = PMT \frac{1-(1+r)^{-n}}{r}
+Annuity-Future-Value: FV = PMT \frac{(1+r)^n-1}{r}
+Black-Scholes:        C = S_0N(d_1) - Ke^{-rT}N(d_2) \text{ where } d_1 = \frac{\ln(S_0/K) + (r+\sigma^2/2)T}{\sigma\sqrt{T}}
+Geometric-Brownian:   dS = \mu S dt + \sigma S dW
+Ito-Lemma:            df = \frac{\partial f}{\partial t}dt + \frac{\partial f}{\partial S}dS + \frac{1}{2}\frac{\partial^2 f}{\partial S^2}(dS)^2
+CAPM:                 E[R_i] = R_f + \beta_i(E[R_m] - R_f)
+Sharpe-Ratio:         S = \frac{E[R] - R_f}{\sigma}
+VaR:                  P(R \leq -\text{VaR}) = \alpha

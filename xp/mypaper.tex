@@ -1,3 +1,4 @@
+\usepackage[colorlinks=true,urlcolor=blue,hidelinks]{hyperref}
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 \usepackage{cite}
@@ -6,10 +7,9 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{accessibility}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
-
-\def\eqn#1{\href{https://eqndict/#1.md}{#1}}
 
 
 \begin{document}
@@ -28,8 +28,6 @@ email@university.edu}
 This test paper presents equations, diagrams, and graphs.
 The purpose is to define accessibility techniques. We are working on equations first.
 Each equation will be linked to a web page where the symbols are defined,
-
-
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -37,7 +35,17 @@ information theory, channel capacity, discrete channels, Shannon theory, mathema
 \end{IEEEkeywords}
 
 \section{Introduction}
-\eqn{fd.Navier-Stokes} % insert the equation, link to the web page with the dictionary entry
+\begin{equation}
+\rho \left(\frac{\partial \mathbf{v}}{\partial t} + \mathbf{v} \cdot \nabla \mathbf{v}\right) = -\nabla p + \mu \nabla^2 \mathbf{v} + \mathbf{f}\hspace{1em}\href{http://localhost:8000/eqn/fd.Navier-Stokes}{\underline{lookup}}
+\label{eq:fd.Navier-Stokes}
+\end{equation}
+ % insert the equation, link to the web page with the dictionary entry
+
+\begin{equation}
+\sin^2 x + \cos^2 x = 1\hspace{1em}\href{http://localhost:8000/eqn/ident.Pythagorean-Identity}{\underline{lookup}}
+\label{eq:ident.Pythagorean-Identity}
+\end{equation}
+
 
 \begin{thebibliography}{1}
 \bibitem{shannon1948}
