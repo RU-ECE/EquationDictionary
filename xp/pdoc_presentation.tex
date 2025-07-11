@@ -1,0 +1,201 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\title{PDOC: Portable Document Standard}
+\subtitle{Accessibility and Equation Dictionary Project}
+\author{Dov Kruger}
+\institute{Rutgers University}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}[fragile]
+\titlepage
+\end{frame}
+\begin{frame}[fragile]{The State of the Digital World}
+\begin{itemize}
+\item Digital documents and displays are everywhere
+\item Blind are shut out of much of the content
+\item Only the young like novelty
+\begin{itemize}
+    \item Vast majority of users want interface stability
+\item Technical users are more likely to tolerate novelty for the sake of functionality
+\end{itemize}
+\item Errors and Exception conditions wreak havoc on the user experience
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Use Cases}
+\begin{itemize}
+\item Document: fixed format resume in Word
+\item Web document: content shifts with the window size
+\item Equations: Screen readers for blind cannot properly explain what is showing
+\item Digital Displays: a car configured in the wrong language cannot be easily reconfigured
+  \begin{itemize}
+    \item Car configured in Greek
+    \item Instructions to change language themselves are in Greek!
+    \item Lane changing cannot easily be disabled, and can actively try to veer the car 
+         if lanes are shifted
+  \end{itemize}
+\item Drawings: Accessibility of a diagram implies describing it
+\item Graphs: Accessibility of a graph implies access to data, better: statistical summary of data
+\item Equations: Many different types of accessibility
+  \begin{itemize}
+    \item blind: view the equation source (LaTeX?)
+    \item missing background
+    \item Different reading levels
+\item Web
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{PDOC: Portable Document Standard}
+Portable Document Standard replacement for PDF \\
+Portable Multimedia Programming API \\ 
+Definition of Exception Handling
+\begin{itemize}
+\item Create documents and Digitial Display to serve all users
+\item IEEE accessibility committee involvement
+\item Superset of prior W3C accessibility guidelines designed for documents only
+\item Focus on semantic content over visual formatting
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Accessibility Challenges}
+\frametitle{Understanding Diverse Needs}
+\begin{itemize}
+\item \textbf{Visual impairments:} Blind, low vision, color-blind
+\item \textbf{Auditory impairments:} Deaf, hard of hearing
+\item \textbf{Motor impairments:} Physical disabilities, tremors
+\item \textbf{Cognitive challenges:} ADHD, Autism, learning disabilities
+\item \textbf{Language barriers:} Non-native speakers, translation needs
+\item \textbf{Interface limitations:} Different devices, screen sizes
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Visual Accessibility}
+\frametitle{Serving Users with Visual Impairments}
+\begin{itemize}
+\item \textbf{Blind users:} Screen readers, Braille displays, audio descriptions
+\item \textbf{Low vision:} High contrast, large fonts, zoom capabilities
+\item \textbf{Color-blind:} Non-color-dependent information, alternative indicators
+\item \textbf{Text alternatives:} Alt text for images, semantic markup
+\item \textbf{Keyboard navigation:} Full functionality without mouse
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Auditory Accessibility}
+\frametitle{Serving Users with Hearing Impairments}
+\begin{itemize}
+\item \textbf{Deaf users:} Captions, transcripts, visual alerts
+\item \textbf{Hard of hearing:} Volume controls, audio amplification
+\item \textbf{Sign language:} Video content with sign language interpretation
+\item \textbf{Visual alternatives:} Text-based communication options
+\item \textbf{Alert systems:} Visual notifications instead of audio
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Cognitive Accessibility}
+\frametitle{Serving Users with Cognitive Challenges}
+\begin{itemize}
+\item \textbf{ADHD:} Clear structure, minimal distractions, focus aids
+\item \textbf{Autism:} Predictable interfaces, clear instructions, sensory considerations
+\item \textbf{Learning disabilities:} Multiple learning pathways, simplified language
+\item \textbf{Memory issues:} Consistent navigation, clear labeling
+\item \textbf{Processing speed:} Adjustable timing, pause options
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Language and Interface Accessibility}
+\frametitle{Global and Device Accessibility}
+\begin{itemize}
+\item \textbf{Foreign language:} Translation support, cultural adaptation
+\item \textbf{Changing interfaces:} Responsive design, device independence
+\item \textbf{Screen sizes:} Mobile, tablet, desktop compatibility
+\item \textbf{Input methods:} Touch, voice, keyboard, switch control
+\item \textbf{Network limitations:} Offline functionality, low-bandwidth options
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Equation Dictionary Project}
+\frametitle{Central Repository for Mathematical Content}
+\begin{itemize}
+\item \textbf{Central repository:} Single source of truth for equations
+\item \textbf{Avoid repetition:} Reference system prevents duplication
+\item \textbf{Documentation:} API-style documentation for mathematical terms
+\item \textbf{Multi-level explanations:} From beginner to expert
+\item \textbf{Background links:} Context for users without prerequisites
+\item \textbf{Semantic access:} Direct equation meaning, not just visual formatting
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Equation Dictionary Features}
+\frametitle{Key Components}
+\begin{itemize}
+\item \textbf{LaTeX integration:} Seamless document processing
+\item \textbf{Web server:} Online lookup and exploration
+\item \textbf{Accessibility focus:} Screen reader friendly, semantic markup
+\item \textbf{Cross-references:} "See:" system for related equations
+\item \textbf{Category organization:} Logical grouping by mathematical field
+\item \textbf{Search capabilities:} Find equations by name or content
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Accessibility in Equation Dictionary}
+\frametitle{Serving Blind and Visually Impaired Users}
+\begin{itemize}
+\item \textbf{Direct semantic access:} LaTeX source as alternate text
+\item \textbf{Screen reader compatibility:} Proper markup and descriptions
+\item \textbf{Keyboard navigation:} Full web interface accessibility
+\item \textbf{Contextual information:} Explanations without visual cues
+\item \textbf{Structured data:} Clear relationships between equations
+\item \textbf{Multiple formats:} Text, audio, and tactile options
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Implementation Details}
+\frametitle{Technical Architecture}
+\begin{itemize}
+\item \textbf{C++ preprocessor:} Efficient LaTeX macro replacement
+\item \textbf{Python web server:} RESTful API for equation lookup
+\item \textbf{Duplicate detection:} Automatic "see:" reference generation
+\item \textbf{PDF generation:} Accessible output with proper tagging
+\item \textbf{Cross-platform:} Works on Linux, Windows, macOS
+\item \textbf{Extensible:} Easy to add new equations and categories
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Future Directions}
+\frametitle{Expanding Accessibility}
+\begin{itemize}
+\item \textbf{Multilingual support:} Equations in multiple languages
+\item \textbf{Interactive elements:} Dynamic equation exploration
+\item \textbf{Mobile optimization:} Touch-friendly interfaces
+\item \textbf{Offline capabilities:} Local equation database
+\item \textbf{Integration APIs:} Connect with other educational tools
+\item \textbf{Community contributions:} Crowdsourced equation additions
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Thank You}
+\frametitle{Questions and Discussion}
+\begin{center}
+\textbf{PDOC: Making Documents Accessible to Everyone}
+
+\vspace{1em}
+\textbf{Equation Dictionary: Mathematical Content for All}
+
+\vspace{2em}
+\textbf{Contact:} Dov Kruger\\
+\textbf{Institution:} Rutgers University
+\end{center}
+\end{frame}
+
+\end{document} 
